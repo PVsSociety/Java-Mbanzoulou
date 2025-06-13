@@ -29,11 +29,20 @@ public class Fraction {
     }
 
     public static void main(String[] args) {
-        Fraction f1 = new Fraction(2, 9);
+        Fraction f1 = new Fraction(2, 3);
+        Fraction f2 = new Fraction(1, 6);
+        Fraction somme = f1.add(f2);
         System.out.println(f1.toString()); 
+        System.out.println("La somme donne : " + somme);
     }
 
     public String toString() {
         return num + " / " + deno;
+    }
+
+    public Fraction add(Fraction other) {
+        int MajNum = this.num * other.deno + this.deno * other.num;
+        int MajDeno = this.deno * other.deno;
+        return new Fraction(MajNum, MajDeno);
     }
 }
