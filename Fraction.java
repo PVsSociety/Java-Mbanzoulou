@@ -36,6 +36,7 @@ public class Fraction {
         System.out.println(f1.toString()); 
         System.out.println("La somme donne : " + somme);
         System.out.println("Le produit donne :" + multiplication);
+        System.out.println("Décimal : " + f1.toDouble());
     }
 
     public String toString() {
@@ -53,5 +54,9 @@ public class Fraction {
         int MajDeno = this.deno * other.deno;
         return new Fraction(MajNum, MajDeno);
 
+    }
+
+    public double toDouble() {
+        return (double) this.num / this.deno;
     }
 }
