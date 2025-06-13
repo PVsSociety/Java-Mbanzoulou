@@ -32,8 +32,10 @@ public class Fraction {
         Fraction f1 = new Fraction(2, 3);
         Fraction f2 = new Fraction(1, 6);
         Fraction somme = f1.add(f2);
+        Fraction multiplication = f1.multiplication(f2);
         System.out.println(f1.toString()); 
         System.out.println("La somme donne : " + somme);
+        System.out.println("Le produit donne :" + multiplication);
     }
 
     public String toString() {
@@ -44,5 +46,12 @@ public class Fraction {
         int MajNum = this.num * other.deno + this.deno * other.num;
         int MajDeno = this.deno * other.deno;
         return new Fraction(MajNum, MajDeno);
+    }
+
+    public Fraction multiplication(Fraction other) {
+        int MajNum = this.num * other.num;
+        int MajDeno = this.deno * other.deno;
+        return new Fraction(MajNum, MajDeno);
+
     }
 }
